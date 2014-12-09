@@ -53,7 +53,13 @@ outCube = equi2cubic(equi);
     outCube{5} = Front Face
     outCube{6} = Back Face
 
-Alternatively, you can specify the output width/height of a cube face by providing a second input   However, if you are in doubt, I have included a sample test script so you can run it and see what the results are.
+Alternatively, you can specify the output width/height of a cube face by providing a second input parameter such that:
+
+```
+outCUbe = equi2cubic(equi, w);
+```
+
+``w`` would be the desired output width/height of a cube face.  However, if you are in doubt with how to run the code, I have included a sample test script so you can run it and see what the results are.
 
 # Assumptions
 

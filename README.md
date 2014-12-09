@@ -54,17 +54,17 @@ outCube = equi2cubic(equi);
     outCube{5} = Front Face
     outCube{6} = Back Face
 
-Alternatively, you can specify the output width/height of a cube face by providing a second input parameter such that:
+The output width/height of each cube face is calculated using the recommended Hugin default (see Introduction) if the script is called this way.  Alternatively, you can control the output width/height of each cube face by providing a second input parameter such that:
 
 ```
 outCUbe = equi2cubic(equi, w);
 ```
 
-``w`` would be the desired output width/height of a cube face.  However, if you are in doubt with how to run the code, I have included a sample test script so you can run it and see what the results are.
+``w`` would be the desired output width/height of a cube face (as an integer of course).  However, if you are in doubt with how to run the code, I have included a sample test script so you can run it and see what the results are.
 
 # Assumptions
 
-No error checking is involved with this code.  This assumes that the equirectangular image is of size `2n x n`.  However, this can handle both monochromatic and grayscale images automatically.
+No error checking is involved with this code.  This assumes that the equirectangular image is of size `2n x n`.  However, this can handle both monochromatic and grayscale images automatically.  This also assumes that ``w`` is an integer and is strictly positive.
 
 # What is included in this repository
 1. The equirectangular-to-cubic conversion script

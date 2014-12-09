@@ -31,6 +31,7 @@ This code would have not been made possible without the following sources:
 
 1. [Philip Nowell's post on mapping points from a square to a unit circle - http://mathproofs.blogspot.ca/2005/07/mapping-square-to-circle.html](http://mathproofs.blogspot.ca/2005/07/mapping-square-to-circle.html)
 2. [Philip Nowell's post on mapping points from a cube to a unit sphere - http://mathproofs.blogspot.ca/2005/07/mapping-cube-to-sphere.html](http://mathproofs.blogspot.ca/2005/07/mapping-cube-to-sphere.html)
+3. Paul Bourke's website - See the Introduction section for link
 
 # Requires
 

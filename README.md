@@ -11,7 +11,7 @@ This is a simple MATLAB script that takes an equirectangular version of a scene 
 
 Given an image that is of size ``2n x n``, where ``2n`` is the width and ``n`` is the height of the image, the output will produce 6 images of size ``m x m`` where ``m`` is the width/height of a cube face.  In the Hugin toolkit, they recommend that ``m`` is defined as:
 
-    m = 8(floor(n/pi/8))
+    m = 8*(floor(n/pi/8))
     
 Roughly speaking, this is the maximum width/height/depth of a cube that can minimally surround the unit sphere.  In normalized co-ordinates, each dimension `x,y,z` has its domain such that:
 

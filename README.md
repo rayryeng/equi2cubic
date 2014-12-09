@@ -7,7 +7,7 @@ This is a MATLAB script that converts equirectangular images into six cube faces
 
 # Introduction
 
-This is a simple MATLAB script that takes an equirectangular version of a scene that is provided as an image with a 2:1 width and height ratio.  If you have seen the repo that performs cubic face to equirectangular version ([https://github.com/rayryeng/cubic2equi](https://github.com/rayryeng/cubic2equi)), this is essentially doing the opposite task.  Again, some good theory on the subject can be found on Paul Bourke's webpage [and can be found here](http://paulbourke.net/geometry/transformationprojection/).
+This is a simple MATLAB script that takes an equirectangular version of a scene that is provided as an image with a 2:1 width and height ratio and creates six cube faces that represents the scene.  If you have seen the repo that performs cubic face to equirectangular version ([https://github.com/rayryeng/cubic2equi](https://github.com/rayryeng/cubic2equi)), this is essentially doing the opposite task.  Again, some good theory on the subject can be found on Paul Bourke's webpage [and can be found here](http://paulbourke.net/geometry/transformationprojection/).
 
 Given an image that is of size ``2n x n``, where ``2n`` is the width and ``n`` is the height of the image, the output will produce 6 images of size ``m x m`` where ``m`` is the width/height of a cube face.  In the Hugin toolkit, they recommend that ``m`` is defined as:
 

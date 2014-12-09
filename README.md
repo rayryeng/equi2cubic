@@ -57,7 +57,7 @@ outCube = equi2cubic(equi);
 The output width/height of each cube face is calculated using the recommended Hugin default (see Introduction) if the script is called this way.  Alternatively, you can control the output width/height of each cube face by providing a second input parameter such that:
 
 ```
-outCUbe = equi2cubic(equi, w);
+outCube = equi2cubic(equi, w);
 ```
 
 ``w`` would be the desired output width/height of a cube face (as an integer of course).  However, if you are in doubt with how to run the code, I have included a sample test script so you can run it and see what the results are.

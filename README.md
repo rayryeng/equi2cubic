@@ -11,27 +11,16 @@ This is a simple MATLAB script that takes an equirectangular version of a scene 
 
 Given an image that is of size ``2n x n``, where ``2n`` is the width and ``n`` is the height of the image, the output will produce 6 images of size ``m x m`` where ``m`` is the width/height of a cube face.  In the Hugin toolkit, they recommend that ``m`` is defined as:
 
-    m = 8*(floor(n/pi/8))
-    
-Roughly speaking, this is the maximum width/height/depth of a cube that can minimally surround the unit sphere.  In normalized co-ordinates, each dimension `x,y,z` has its domain such that:
+    m = 8*(floor(2*n/pi/8))
 
-    -1 <= x <= 1
-    -1 <= y <= 1
-    -1 <= z <= 1
-
-The basic premise behind how the cubic image generation works is that the equirectangular image is a flattened representation of a 360 degree scene.  Each point in the equirectangular denotes a point on the surface of the sphere.  If we place the sphere inside a cube, we accomplish converting from equirectangular to cubic, by determining where each point in our sphere **projects** onto the cube.  If we took a point on the sphere and traced a ray from this point outwards until we hit a cube face, this is where the point on the sphere would map to on a cube face.  However, we have the inverse problem.  What we want to do is for a given location in a cube face, we need to figure out which point on the sphere we need to sample from so that we can copy the pixel colour from this point in the sphere onto the cube face.
-
-The basic algorithm to generate a cube face would be to generate a square surface of points that is representative of the cube face we want to generate and positioned in the corresponding spot that is representative of that cube face.  Then, for each point on this cube face, figure out where we need to sample from on the unit sphere and copy this pixel colour over to the cube face.  It should be noted that this code does *not* perform any interpolation when sampling the cubic faces.  This performs nearest neighbour sampling instead.  You are certainly welcome to implement this on your own if you would like!
-
-The mathematics behind how this projection works can be found in the links below.
+As an added bonus, bilinear interpolation is performed when sampling from the equirectangular image to generate the cube faces.
 
 # Sources of inspiration
 
 This code would have not been made possible without the following sources:
 
-1. [Philip Nowell's post on mapping points from a square to a unit circle - http://mathproofs.blogspot.ca/2005/07/mapping-square-to-circle.html](http://mathproofs.blogspot.ca/2005/07/mapping-square-to-circle.html)
-2. [Philip Nowell's post on mapping points from a cube to a unit sphere - http://mathproofs.blogspot.ca/2005/07/mapping-cube-to-sphere.html](http://mathproofs.blogspot.ca/2005/07/mapping-cube-to-sphere.html)
-3. Paul Bourke's website - See the Introduction section for link
+1. Paul Bourke's website - See the Introduction section for link
+2. The BigShot JavaScript library: [https://code.google.com/p/bigshot/](https://code.google.com/p/bigshot/).  I didn't use the library, but I used their equirectangular to cubic conversion code as inspiration and as a means of double-checking my implementation.  In essence, this is a MATLAB transcription of this code - [https://code.google.com/p/bigshot/source/browse/src/java/bigshot/EquirectangularToCubic.java?r=9bccfb84a0f725e8a53685e97662e42163de4c28](https://code.google.com/p/bigshot/source/browse/src/java/bigshot/EquirectangularToCubic.java?r=9bccfb84a0f725e8a53685e97662e42163de4c28)
 
 # Requires
 
@@ -57,10 +46,18 @@ outCube = equi2cubic(equi);
 The output width/height of each cube face is calculated using the recommended Hugin default (see Introduction) if the script is called this way.  Alternatively, you can control the output width/height of each cube face by providing a second input parameter such that:
 
 ```
-outCUbe = equi2cubic(equi, w);
+outCube = equi2cubic(equi, w);
 ```
 
 ``w`` would be the desired output width/height of a cube face (as an integer of course).  However, if you are in doubt with how to run the code, I have included a sample test script so you can run it and see what the results are.
+
+As a means of experimentation, you can also vary the vertical field of view.  For cubic images, the vertical field of view is 90 degrees per face, but you can vary this to see what the effects are.  In other words:
+
+```
+outCube = equi2cubic(equi, w, vfov);
+```
+
+`vfov` is the vertical field of view *in degrees*.
 
 # Assumptions
 

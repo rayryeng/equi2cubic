@@ -1,6 +1,5 @@
 % Read in the image
-% equi = imread('arch_equi.jpg');
-equi = imread('streetcar.jpg');
+equi = imread('arch_equi.jpg');
 
 % Close all figures and create cubic images
 close all;

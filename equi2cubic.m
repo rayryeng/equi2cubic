@@ -1,5 +1,29 @@
 function [out] = equi2cubic(im, output_size, vfov)
 
+    % Rotation matrix - x axis
+    % Angle in degrees
+    function [mat] = rotx(ang)
+        mat = [1 0 0; 
+            0 cosd(ang) -sind(ang); 
+            0 sind(ang) cosd(ang)];
+    end
+
+    % Rotation matrix - y axis
+    % Angle in degrees
+    function [mat] = roty(ang)
+        mat = [cosd(ang) 0 sind(ang); 
+            0 1 0; 
+            -sind(ang) 0 cosd(ang)];
+    end
+
+    % Rotation matrix - z axis
+    % Angle in degrees    
+    function [mat] = rotz(ang)
+        mat = [cosd(ang) -sind(ang) 0; 
+            sind(ang) cosd(ang) 0; 
+            0 0 1];
+    end
+
 % Set up default parameters
 % Default output size
 if nargin == 1

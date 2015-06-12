@@ -20,7 +20,7 @@ As an added bonus, bilinear interpolation is performed when sampling from the eq
 This code would have not been made possible without the following sources:
 
 1. Paul Bourke's website - See the Introduction section for link
-2. The BigShot JavaScript library: [https://code.google.com/p/bigshot/](https://code.google.com/p/bigshot/).  I didn't use the library, but I used their equirectangular to cubic conversion code as inspiration and as a means of double-checking my implementation.  In essence, this is a MATLAB transcription of this code - [https://code.google.com/p/bigshot/source/browse/src/java/bigshot/EquirectangularToCubic.java?r=9bccfb84a0f725e8a53685e97662e42163de4c28](https://code.google.com/p/bigshot/source/browse/src/java/bigshot/EquirectangularToCubic.java?r=9bccfb84a0f725e8a53685e97662e42163de4c28)
+2. The BigShot JavaScript library: [https://bitbucket.org/leo_sutic/bigshot](https://bitbucket.org/leo_sutic/bigshot).  I didn't use the library, but I used their equirectangular to cubic conversion code as inspiration and as a means of double-checking my implementation.  In essence, this is a MATLAB transcription of these two pieces of code - [```AbstractCubicTransform - transform()```](https://bitbucket.org/leo_sutic/bigshot/src/e7bd8aeead5708974c67204d62812dad0e50ee45/src/java/bigshot/AbstractSphericalCubicTransform.java?at=default#cl-62), [the ```EquirectangularToCubic``` class](https://bitbucket.org/leo_sutic/bigshot/src/e7bd8aeead5708974c67204d62812dad0e50ee45/src/java/bigshot/EquirectangularToCubic.java?at=default)
 
 # Requires
 
